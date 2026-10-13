@@ -1,0 +1,53 @@
+{
+  "name": "Papelería Paola",
+  "short_name": "Papelería",
+  "description": "Tienda de papelería progresiva con carrito, modo sin conexión y formularios persistentes.",
+  "lang": "es",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "background_color": "#5b4ce6",
+  "theme_color": "#5b4ce6",
+  "categories": ["shopping", "education", "productivity"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver catálogo",
+      "url": "./index.html",
+      "description": "Explorar productos de papelería"
+    },
+    {
+      "name": "Mi carrito",
+      "url": "./index.html",
+      "description": "Revisar el carrito de compras"
+    }
+  ]
+}
