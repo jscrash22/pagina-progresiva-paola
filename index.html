@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Papelería Paola - Tienda de papelería como Aplicación Web Progresiva con carrito, modo sin conexión y formularios persistentes." />
+  <title>Papelería Paola · PWA</title>
+
+  <meta name="theme-color" content="#5b4ce6" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Papelería Paola" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="connectionBanner" class="connection-banner" hidden>
+    <span id="connectionBannerText">Sin conexión</span>
+  </div>
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-logo" aria-hidden="true">✎</span>
+      <div class="brand-text">
+        <strong>Papelería Paola</strong>
+        <small>Todo para estudiar y crear</small>
+      </div>
+    </div>
+
+    <div class="search">
+      <span aria-hidden="true">🔍</span>
+      <input type="search" id="buscador" placeholder="Buscar cuadernos, lápices, arte..." autocomplete="off" aria-label="Buscar productos" />
+    </div>
+
+    <div class="header-actions">
+      <span id="statusPill" class="status-pill" title="Estado de conexión">
+        <span class="status-dot"></span>
+        <span id="statusText">En línea</span>
+      </span>
+
+      <button id="installBtn" class="btn btn-ghost" hidden>Instalar app</button>
+
+      <button id="cartButton" class="btn btn-icon cart-button" aria-label="Abrir carrito">
+        🛒
+        <span id="cartBadge" class="badge" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="app-nav" aria-label="Navegación principal">
+    <button class="nav-item is-active" data-view="catalogo">🛍️ <span>Catálogo</span></button>
+    <button class="nav-item" data-view="carrito">🛒 <span>Carrito</span></button>
+    <button class="nav-item" data-view="pedidos">📦 <span>Pedidos</span></button>
+    <button class="nav-item" data-view="contacto">✉️ <span>Contacto</span></button>
+  </nav>
+
+  <main class="app-main">
+    <section id="view-catalogo" class="view is-active" aria-labelledby="tituloCatalogo">
+      <div class="section-head">
+        <div>
+          <h1 id="tituloCatalogo">Catálogo</h1>
+          <p class="muted" id="catalogoResumen">Cargando productos…</p>
+        </div>
+        <div class="catalogo-actions">
+          <label class="checkbox">
+            <input type="checkbox" id="soloFavoritos" />
+            <span>Solo favoritos ★</span>
+          </label>
+          <select id="ordenar" class="select" aria-label="Ordenar productos">
+            <option value="relevancia">Relevancia</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="rating">Mejor valorados</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="categorias" class="chips" role="tablist" aria-label="Categorías"></div>
+      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="view-carrito" class="view" aria-labelledby="tituloCarrito">
+      <div class="section-head">
+        <div>
+          <h1 id="tituloCarrito">Carrito de compras</h1>
+          <p class="muted" id="carritoResumen">Tu carrito está vacío.</p>
+        </div>
+        <button id="vaciarCarrito" class="btn btn-ghost">Vaciar carrito</button>
+      </div>
+
+      <div class="cart-layout">
+        <div id="cartItems" class="cart-items"></div>
+
+        <aside class="cart-summary">
+          <h2>Resumen</h2>
+          <div class="summary-row"><span>Artículos</span><span id="sumItems">0</span></div>
+          <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">$0.00</span></div>
+          <div class="summary-row"><span>IVA (15%)</span><span id="sumIva">$0.00</span></div>
+          <div class="summary-row total"><span>Total</span><span id="sumTotal">$0.00</span></div>
+
+          <form id="checkoutForm" class="form" novalidate>
+            <h3>Datos de entrega</h3>
+            <div class="field">
+              <label for="coNombre">Nombre completo</label>
+              <input id="coNombre" name="nombre" type="text" required minlength="3" placeholder="Paola Sánchez" />
+            </div>
+            <div class="field">
+              <label for="coEmail">Correo electrónico</label>
+              <input id="coEmail" name="email" type="email" required placeholder="paola@correo.com" />
+            </div>
+            <div class="field">
+              <label for="coTelefono">Teléfono</label>
+              <input id="coTelefono" name="telefono" type="tel" required placeholder="0999999999" />
+            </div>
+            <div class="field">
+              <label for="coDireccion">Dirección de entrega</label>
+              <textarea id="coDireccion" name="direccion" rows="2" required placeholder="Calle, número, ciudad"></textarea>
+            </div>
+            <div class="field">
+              <label for="coPago">Método de pago</label>
+              <select id="coPago" name="pago" class="select">
+                <option value="efectivo">Efectivo contra entrega</option>
+                <option value="transferencia">Transferencia bancaria</option>
+                <option value="tarjeta">Tarjeta (al recibir)</option>
+              </select>
+            </div>
+
+            <p id="checkoutDraftInfo" class="draft-info" hidden>✎ Borrador guardado automáticamente</p>
+
+            <button type="submit" class="btn btn-primary btn-block">Confirmar pedido</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section id="view-pedidos" class="view" aria-labelledby="tituloPedidos">
+      <div class="section-head">
+        <div>
+          <h1 id="tituloPedidos">Mis pedidos</h1>
+          <p class="muted" id="pedidosResumen">Aquí verás tus pedidos guardados localmente.</p>
+        </div>
+        <button id="sincronizarBtn" class="btn btn-ghost">Sincronizar ahora</button>
+      </div>
+      <div id="pedidosList" class="orders-list"></div>
+    </section>
+
+    <section id="view-contacto" class="view" aria-labelledby="tituloContacto">
+      <div class="section-head">
+        <div>
+          <h1 id="tituloContacto">Contacto</h1>
+          <p class="muted">Escríbenos. Si te quedas sin conexión, tu mensaje no se pierde.</p>
+        </div>
+      </div>
+
+      <form id="contactoForm" class="form form-card" novalidate>
+        <div class="field">
+          <label for="ctNombre">Nombre</label>
+          <input id="ctNombre" name="nombre" type="text" required minlength="3" placeholder="Tu nombre" />
+        </div>
+        <div class="field">
+          <label for="ctEmail">Correo electrónico</label>
+          <input id="ctEmail" name="email" type="email" required placeholder="tucorreo@dominio.com" />
+        </div>
+        <div class="field">
+          <label for="ctAsunto">Asunto</label>
+          <input id="ctAsunto" name="asunto" type="text" required placeholder="Consulta sobre un producto" />
+        </div>
+        <div class="field">
+          <label for="ctMensaje">Mensaje</label>
+          <textarea id="ctMensaje" name="mensaje" rows="4" required minlength="10" placeholder="Cuéntanos en qué te ayudamos..."></textarea>
+        </div>
+
+        <p id="contactoDraftInfo" class="draft-info" hidden>✎ Borrador guardado automáticamente</p>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+          <button type="reset" class="btn btn-ghost" id="contactoLimpiar">Limpiar</button>
+        </div>
+      </form>
+
+      <div id="mensajesList" class="orders-list"></div>
+    </section>
+  </main>
+
+  <div id="toasts" class="toasts" aria-live="polite" aria-atomic="true"></div>
+
+  <footer class="app-footer">
+    <small>Papelería Paola · PWA de demostración · datos en JSON + IndexedDB</small>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
