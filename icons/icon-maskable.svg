@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Papelería Paola">
+  <defs>
+    <linearGradient id="bgm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5b4ce6" />
+      <stop offset="1" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="pencilm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#e9eaff" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bgm)" />
+  <g transform="rotate(45 256 256) scale(0.78) translate(72 72)">
+    <rect x="150" y="234" width="26" height="44" rx="10" fill="#fbbf24" />
+    <rect x="176" y="234" width="150" height="44" rx="8" fill="url(#pencilm)" />
+    <rect x="300" y="234" width="16" height="44" fill="#c7c9f2" />
+    <polygon points="316,234 382,256 316,278" fill="#f59e0b" />
+    <polygon points="362,249 382,256 362,263" fill="#1f2937" />
+  </g>
+</svg>
