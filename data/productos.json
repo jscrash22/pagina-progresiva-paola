@@ -1,0 +1,218 @@
+{
+  "tienda": {
+    "nombre": "Papelería Paola",
+    "eslogan": "Todo para estudiar, crear y organizarte",
+    "moneda": "USD",
+    "actualizado": "2026-10-13"
+  },
+  "categorias": [
+    { "id": "cuadernos", "nombre": "Cuadernos", "icono": "📓" },
+    { "id": "escritura", "nombre": "Escritura", "icono": "🖊️" },
+    { "id": "arte", "nombre": "Arte", "icono": "🎨" },
+    { "id": "oficina", "nombre": "Oficina", "icono": "🗂️" },
+    { "id": "escolar", "nombre": "Escolar", "icono": "🎒" },
+    { "id": "tecnologia", "nombre": "Tecnología", "icono": "🖥️" }
+  ],
+  "productos": [
+    {
+      "id": "P001",
+      "nombre": "Cuaderno universitario cosido 100 hojas",
+      "categoria": "cuadernos",
+      "precio": 2.5,
+      "stock": 40,
+      "rating": 4.6,
+      "emoji": "📓",
+      "descripcion": "Cuaderno cosido de 100 hojas, pasta dura, ideal para apuntes de clases."
+    },
+    {
+      "id": "P002",
+      "nombre": "Cuaderno de dibujo A4 120g",
+      "categoria": "cuadernos",
+      "precio": 5.75,
+      "stock": 25,
+      "rating": 4.8,
+      "emoji": "📒",
+      "descripcion": "Hojas de 120g libres de ácido, perfectas para lápiz, tinta y acuarela ligera."
+    },
+    {
+      "id": "P003",
+      "nombre": "Agenda ejecutiva 2026",
+      "categoria": "cuadernos",
+      "precio": 8.9,
+      "stock": 15,
+      "rating": 4.5,
+      "emoji": "📅",
+      "descripcion": "Agenda semanal con vista mensual, cinta separadora y bolsillo interior."
+    },
+    {
+      "id": "P004",
+      "nombre": "Bolígrafo tinta gel azul",
+      "categoria": "escritura",
+      "precio": 1.25,
+      "stock": 120,
+      "rating": 4.7,
+      "emoji": "🖊️",
+      "descripcion": "Tinta gel de secado rápido, trazo suave de 0.7 mm."
+    },
+    {
+      "id": "P005",
+      "nombre": "Lápiz grafito HB con borrador",
+      "categoria": "escritura",
+      "precio": 0.6,
+      "stock": 200,
+      "rating": 4.4,
+      "emoji": "✏️",
+      "descripcion": "Lápiz de madera reforestada, mina HB resistente a la rotura."
+    },
+    {
+      "id": "P006",
+      "nombre": "Marcadores pastel x6",
+      "categoria": "escritura",
+      "precio": 4.3,
+      "stock": 60,
+      "rating": 4.9,
+      "emoji": "🖍️",
+      "descripcion": "Set de 6 marcadores de colores pastel para resaltar y decorar."
+    },
+    {
+      "id": "P007",
+      "nombre": "Resaltadores fluorescentes x4",
+      "categoria": "escritura",
+      "precio": 3.2,
+      "stock": 75,
+      "rating": 4.5,
+      "emoji": "🖌️",
+      "descripcion": "Punta biselada, colores neón de larga duración."
+    },
+    {
+      "id": "P008",
+      "nombre": "Acuarelas 12 colores + pincel",
+      "categoria": "arte",
+      "precio": 6.4,
+      "stock": 30,
+      "rating": 4.6,
+      "emoji": "🎨",
+      "descripcion": "Paleta de 12 pastillas de acuarela con pincel de punta fina."
+    },
+    {
+      "id": "P009",
+      "nombre": "Lápices de color x24",
+      "categoria": "arte",
+      "precio": 7.1,
+      "stock": 45,
+      "rating": 4.8,
+      "emoji": "🌈",
+      "descripcion": "Mina blanda, colores intensos y fáciles de mezclar."
+    },
+    {
+      "id": "P010",
+      "nombre": "Bloc de foami con escarcha",
+      "categoria": "arte",
+      "precio": 3.8,
+      "stock": 20,
+      "rating": 4.3,
+      "emoji": "✨",
+      "descripcion": "Foami A4 con brillo, ideal para manualidades y trabajos escolares."
+    },
+    {
+      "id": "P011",
+      "nombre": "Grapadora metálica mediana",
+      "categoria": "oficina",
+      "precio": 5.5,
+      "stock": 35,
+      "rating": 4.5,
+      "emoji": "📎",
+      "descripcion": "Grapadora de metal con capacidad para 20 hojas y base antideslizante."
+    },
+    {
+      "id": "P012",
+      "nombre": "Carpeta archivadora A4 lomo ancho",
+      "categoria": "oficina",
+      "precio": 4.0,
+      "stock": 50,
+      "rating": 4.4,
+      "emoji": "🗂️",
+      "descripcion": "Carpeta de palanca con lomo de 8 cm y mecanismo resistente."
+    },
+    {
+      "id": "P013",
+      "nombre": "Notas adhesivas colores x400",
+      "categoria": "oficina",
+      "precio": 2.9,
+      "stock": 80,
+      "rating": 4.7,
+      "emoji": "🔖",
+      "descripcion": "Pack de notas adhesivas en colores surtidos para organizar ideas."
+    },
+    {
+      "id": "P014",
+      "nombre": "Calculadora científica 240 funciones",
+      "categoria": "tecnologia",
+      "precio": 14.99,
+      "stock": 18,
+      "rating": 4.6,
+      "emoji": "🧮",
+      "descripcion": "Pantalla de 2 líneas, funciones trigonométricas y estadísticas."
+    },
+    {
+      "id": "P015",
+      "nombre": "USB 32GB papelería",
+      "categoria": "tecnologia",
+      "precio": 9.5,
+      "stock": 22,
+      "rating": 4.5,
+      "emoji": "💾",
+      "descripcion": "Memoria USB 2.0 de 32GB con tapa protectora."
+    },
+    {
+      "id": "P016",
+      "nombre": "Compás de precisión",
+      "categoria": "escolar",
+      "precio": 3.4,
+      "stock": 40,
+      "rating": 4.2,
+      "emoji": "📐",
+      "descripcion": "Compás de metal con mina de repuesto y adaptador para portaminas."
+    },
+    {
+      "id": "P017",
+      "nombre": "Regla de 30 cm acrílica",
+      "categoria": "escolar",
+      "precio": 0.9,
+      "stock": 90,
+      "rating": 4.3,
+      "emoji": "📏",
+      "descripcion": "Regla transparente con escala en centímetros y pulgadas."
+    },
+    {
+      "id": "P018",
+      "nombre": "Mochila escolar impermeable",
+      "categoria": "escolar",
+      "precio": 22.0,
+      "stock": 12,
+      "rating": 4.7,
+      "emoji": "🎒",
+      "descripcion": "Mochila con compartimento para laptop de 15\", varios bolsillos y espalda acolchada."
+    },
+    {
+      "id": "P019",
+      "nombre": "Tijeras escolares punta roma",
+      "categoria": "escolar",
+      "precio": 1.8,
+      "stock": 70,
+      "rating": 4.4,
+      "emoji": "✂️",
+      "descripcion": "Tijeras de acero inoxidable con mango ergonómico para niños."
+    },
+    {
+      "id": "P020",
+      "nombre": "Cartuchera doble compartimento",
+      "categoria": "escolar",
+      "precio": 6.9,
+      "stock": 28,
+      "rating": 4.6,
+      "emoji": "🧰",
+      "descripcion": "Cartuchera de tela resistente con cierre doble y cinta para transportar."
+    }
+  ]
+}
